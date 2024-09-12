@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 2</title>
+</head>
+<body>
+    <h2>Завантаження файлу</h2>
+    <form action="process.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="user_file"><br><br>
+        <input type="submit" value="Завантажити">
+    </form>
+
+    <h2>Введіть текст для запису у файл</h2>
+    <form action="text.php" method="POST">
+        <textarea name="logText" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Записати у файл">
+    </form>
+
+    <h2>Список файлів</h2>
+    <a href="list.php">Переглянути список завантажених файлів</a>
+</body>
+</html>
