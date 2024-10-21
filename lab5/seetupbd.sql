@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS shop;
+
+USE shop;
+
+CREATE TABLE IF NOT EXISTS categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL CHECK (price >= 0),
+    description TEXT,
+    discount DECIMAL(5, 2) DEFAULT 0,
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
+);
